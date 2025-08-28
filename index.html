@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathalia Nóbrega | Designer</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://media.licdn.com/dms/image/v2/D4D03AQFYYNd9UXIbcQ/profile-displayphoto-shrink_800_800/B4DZYhilCwG8Ac-/0/1744319436270?e=1759363200&v=beta&t=L0KTHle25x0uURF0fvjL6g1baEm9YAWuAUDLXgRrQu8" type="image/x-icon">
+
+    <style>
+        :root {
+            --bg-color: #172b29;
+            --text-color: #FFFFFF;
+            --accent-red: #e13d34;
+            --accent-yellow: #9d7335;
+            --accent-red-dark: #7e2d2b;
+            --accent-pink-light: #eea1b3;
+            --accent-pink-dark: #e280b1;
+            --border-color: rgba(255, 255, 255, 0.2);
+            --hover-color: var(--accent-yellow);
+            --instagram-bg: #3b1d0d;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        .custom-cursor {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: white;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.2s ease-out;
+            transform-origin: center center;
+        }
+
+        @media (pointer: coarse) {
+            .custom-cursor { display: none; }
+            body { cursor: auto; }
+        }
+
+        .cursor-scale {
+            transform: scale(2.5);
+        }
+        
+        .giant-text {
+            font-size: clamp(3rem, 12vw, 10rem);
+            line-height: 0.9;
+        }
+
+        .project-card-visual {
+            border: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        .project-card-visual img {
+            transition: transform 0.4s ease;
+        }
+        .project-card-visual:hover img {
+            transform: scale(1.05);
+        }
+        .project-card-visual:hover {
+            border-color: var(--hover-color);
+        }
+        .card-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-button {
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-button:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+        
+        .parallax-image {
+            will-change: transform;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="custom-cursor"></div>
+
+    <div class="container mx-auto px-6 md:px-10 max-w-7xl">
+
+        <header class="py-8 flex justify-between items-center text-lg">
+            <span class="font-medium hoverable">Oi!</span>
+            <a href="#projetos" class="hoverable font-medium">projetos.</a>
+        </header>
+
+        <main id="main-content">
+            <section id="home" class="py-16 md:py-24 border-b border-[var(--border-color)]">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    
+                    <div class="md:col-span-2">
+                        <h1 class="giant-text font-black tracking-tighter">
+                            NATHALIA<br>NÓBREGA
+                        </h1>
+                        <p id="sobre" class="text-xl md:text-2xl leading-snug max-w-xl mt-8">
+                            Designer e artista do Brasil. Crio visuais ousados e lúdicos que conectam pessoas e ideias, a MUSA do design de Natal.
+                        </p>
+                    </div>
+
+                    <div class="flex items-start justify-center md:pt-4">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden">
+                            <img src="imagens/foto-perfil.jpg" 
+                                 alt="Foto de Nathalia Nóbrega" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null;this.src='https://media.licdn.com/dms/image/v2/D4D03AQFYYNd9UXIbcQ/profile-displayphoto-shrink_800_800/B4DZYhilCwG8Ac-/0/1744319436270?e=1759363200&v=beta&t=L0KTHle25x0uURF0fvjL6g1baEm9YAWuAUDLXgRrQu8';">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Projetos com Grade Vertical -->
+            <section id="projetos" class="py-20">
+                <div class="flex justify-between items-center mb-10">
+                    <h2 class="text-4xl font-bold">Projetos</h2>
+                    <a href="https://www.behance.net/nathalianobrega/projects" target="_blank" class="hoverable text-sm underline">Ver todos</a>
+                </div>
+                <div id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Cards visuais serão inseridos pelo JavaScript -->
+                </div>
+            </section>
+        </main>
+        
+        <!-- Página de Detalhes do Projeto -->
+        <div id="project-detail-page" class="hidden py-16">
+            <button id="back-to-grid-btn" class="hoverable back-button mb-12">← Voltar</button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 id="detail-project-title" class="text-5xl font-bold"></h2>
+                    <p id="detail-project-category" class="text-xl text-gray-400 mt-2"></p>
+                    <p id="detail-project-description" class="mt-8 text-lg"></p>
+                     <a id="detail-project-link" href="#" target="_blank" class="hoverable inline-block mt-8 text-lg underline">Ver projeto completo →</a>
+                </div>
+                <div>
+                    <img id="detail-project-image" src="" alt="Imagem do projeto" class="w-full rounded-lg object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção Instagram -->
+    <section id="instagram" class="py-20 md:py-32 bg-[var(--instagram-bg)] text-white mt-10 relative overflow-hidden min-h-[70vh] flex items-center">
+      <div class="container mx-auto px-6 md:px-10 max-w-7xl relative z-10">
+    
+        <a href="https://www.instagram.com/_nthli_/" target="_blank" class="hoverable inline-flex items-center space-x-3 text-lg mt-4">
+          <i class="fab fa-instagram"></i>
+          <span>@_nthli_</span>
+        </a>
+      </div>
+      <div id="instagram-posts" class="absolute inset-0">
+          <!-- Imagens do Instagram inseridas via JS -->
+      </div>
+    </section>
+
+    <footer class="py-12 border-t border-[var(--border-color)]">
+        <div class="container mx-auto px-6 md:px-10 max-w-7xl text-center flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+                <h3 class="text-2xl font-bold">Vamos conversar?</h3>
+                <p class="text-gray-400">Entre em contato para iniciarmos um novo projeto.</p>
+            </div>
+            
+            <a href="mailto:email@exemplo.com" class="hoverable inline-block bg-[var(--accent-pink-dark)] text-white font-bold text-lg px-8 py-4 rounded-full hover:bg-opacity-80 transition-colors duration-300">
+                Entrar em contato
+            </a>
+
+            <div class="flex justify-center space-x-6 text-gray-400">
+                <a href="https://www.behance.net/nathalianobrega" target="_blank" class="hoverable hover:text-white transition-colors">Behance</a>
+                <a href="https://www.instagram.com/_nthli_/" target="_blank" class="hoverable hover:text-white transition-colsors">Instagram</a>
+            </div>
+        </div>
+         <div class="text-center text-gray-500 mt-10">
+            <p>&copy; <span id="current-year"></span> Nathalia Nóbrega.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP e ScrollTrigger via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // --- DADOS DOS PROJETOS E INSTAGRAM ---
+        const projectsData = [
+            { id: '001', category: 'Ilustração Digital', title: 'Menina bonita chora', description: 'Ilustração inspirada na música de Jorge Ben Jor, “Menina bonita não chora".', imageUrl: 'imagens/menina.jpg', cardImageUrl: 'imagens/menina.jpg', link: 'https://www.behance.net/gallery/124881659/Ilustracao-Digital' },
+            { id: '002', category: 'Pesquisa acadêmica & ebook', title: 'Feito na Paraíba, com amor', description: 'Análise das estratégias de comunicação digital por marcas de moda em João Pessoa.', imageUrl: 'imagens/feitonaparaiba.jpg', cardImageUrl: 'imagens/feitonaparaiba.jpg', link: 'https://www.behance.net/gallery/192608971/Pesquisa-academica-ebook' },
+            { id: '003', category: 'Redesign do projeto gráfico de livro', title: 'Livro Tipografia Pós-Moderna', description: 'Autor: João Pedro Jacques | Projeto Gráfico, capa e diagramação: Nathália Nóbrega | "A tipografia vem desempenhando papel fundamental neste processo, e ela mesma tem sofrido ataques que escandalizam os mais puristas. Em Tipografia pós-moderna, João Pedro Jacques faz um mapeamento das principais iniciativas de renovação do design gráfico mundial nos últimos anos, especialmente com relação à tipografia. Oferece ao leitor nomes, datas, referências e conceitos de cada uma destas escolas, relacionando-as entre si, num panorama objetivo e conciso que põe fim a confusões e permite ao designer acompanhar com maior segurança os novos caminhos de sua atividade."', imageUrl: 'imagens/livrotipografia.jpg', cardImageUrl: 'imagens/livrotipografia.jpg', link: 'https://www.behance.net/gallery/161227453/Livro-Tipografia-Pos-Moderna' },
+            { id: '004', category: 'Identidade Visual', title: 'Escritório de Advocacia', description: 'Desenvolvimento de uma identidade visual sóbria e moderna para um escritório de advocacia, transmitindo confiança e profissionalismo.', imageUrl: 'imagens/advocacia.png', cardImageUrl: 'imagens/advocacia.png', link: 'https://www.behance.net/gallery/188816245/Identidade-Visual-Escritorio-de-Advocacia' },
+            { id: '005', category: 'Arte', title: 'Tapeçaria', description: 'Exploração artística através da tapeçaria, trabalhando com formas, cores e texturas para criar peças decorativas únicas e expressivas.', imageUrl: 'imagens/livro.gif', cardImageUrl: 'imagens/livro.gif', link: '#' },
+            { id: '006', category: 'Em Breve', title: 'Novo Projeto', description: 'Um novo projeto está sendo desenvolvido. Fique de olho para mais novidades em breve!', imageUrl: 'imagens/em-breve.jpg', cardImageUrl: 'imagens/em-breve.jpg', link: '#' }
+        ];
+        
+        const instagramPosts = [
+            { imageUrl: 'imagens/foto1.jpg', link: 'https://www.instagram.com/p/DAJ70bUSiG2/?img_index=1', positionClasses: 'absolute top-10 right-10 md:right-20 w-48 md:w-80 object-cover transform rotate-12 opacity-90', speed: -0.15 },
+            { imageUrl: 'imagens/foto2.jpg', link: 'https://www.instagram.com/p/DH6t8BrSbwz/?img_index=5', positionClasses: 'absolute bottom-10 left-10 md:left-40 w-40 md:w-64 object-cover transform -rotate-6 opacity-90', speed: -0.25 },
+            { imageUrl: 'imagens/foto3.jpg', link: 'https://www.instagram.com/p/DH6t8BrSbwz/?img_index=18', positionClasses: 'absolute bottom-1/2 right-1/4 w-32 md:w-48 object-cover transform rotate-3 opacity-90 hidden md:block', speed: -0.1 },
+            { imageUrl: 'imagens/insta-04.jpg', link: '#', positionClasses: 'absolute top-1/3 left-1/4 w-32 md:w-56 object-cover transform rotate-2 opacity-90 hidden lg:block', speed: -0.2 },
+            { imageUrl: 'imagens/insta-05.jpg', link: '#', positionClasses: 'absolute bottom-20 right-1/3 w-40 md:w-64 object-cover transform -rotate-8 opacity-90 hidden lg:block', speed: -0.18 }
+        ];
+
+        // --- LÓGICA DE NAVEGAÇÃO E RENDERIZAÇÃO ---
+        const mainContent = document.getElementById('main-content');
+        const projectDetailPage = document.getElementById('project-detail-page');
+        const projectGrid = document.getElementById('project-grid');
+        const backToGridBtn = document.getElementById('back-to-grid-btn');
+        const instagramContainer = document.getElementById('instagram-posts');
+
+        const showProjectDetail = (projectId) => {
+            const project = projectsData.find(p => p.id === projectId);
+            if (!project) return;
+
+            document.getElementById('detail-project-title').textContent = project.title;
+            document.getElementById('detail-project-category').textContent = project.category;
+            document.getElementById('detail-project-description').textContent = project.description;
+            document.getElementById('detail-project-image').src = project.imageUrl;
+            document.getElementById('detail-project-link').href = project.link;
+
+            mainContent.classList.add('hidden');
+            projectDetailPage.classList.remove('hidden');
+            window.scrollTo(0, 0);
+        };
+
+        const showMainGrid = () => {
+             projectDetailPage.classList.add('hidden');
+             mainContent.classList.remove('hidden');
+        };
+
+        // Gerar cards na grade vertical
+        projectGrid.innerHTML = projectsData.map(project => `
+            <div class="hoverable project-card-visual rounded-lg" data-project-id="${project.id}">
+              <div class="relative aspect-square">
+                <img src="${project.cardImageUrl}" alt="${project.title}" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x600/172b29/FFFFFF?text=Imagem+n%C3%A3o+encontrada';">
+                <div class="card-overlay absolute inset-0 p-4 flex flex-col justify-end">
+                  <h3 class="font-bold text-white">${project.title}</h3>
+                  <p class="text-sm text-gray-300">${project.category}</p>
+                </div>
+              </div>
+            </div>
+        `).join('');
+        
+        instagramContainer.innerHTML = instagramPosts.map(post => `
+            <a href="${post.link}" target="_blank" class="hoverable ${post.positionClasses}" data-speed="${post.speed}">
+                <img src="${post.imageUrl}" alt="Instagram post" class="parallax-image" onerror="this.onerror=null;this.style.display='none';">
+            </a>
+        `).join('');
+        
+        projectGrid.addEventListener('click', (e) => {
+            const card = e.target.closest('.project-card-visual');
+            if (card && card.dataset.projectId) {
+                showProjectDetail(card.dataset.projectId);
+            }
+        });
+
+        backToGridBtn.addEventListener('click', showMainGrid);
+        
+        // --- LÓGICA DO CURSOR ---
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', e => {
+            requestAnimationFrame(() => {
+                cursor.style.top = `${e.clientY}px`;
+                cursor.style.left = `${e.clientX}px`;
+            });
+        });
+        document.querySelectorAll('.hoverable').forEach(item => {
+            item.addEventListener('mouseover', () => cursor.classList.add('cursor-scale'));
+            item.addEventListener('mouseout', () => cursor.classList.remove('cursor-scale'));
+        });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- ANIMAÇÕES COM GSAP ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animação de entrada para a seção principal
+        gsap.from("#home > div", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        // Animação de entrada para os cards de projeto
+        gsap.from(".project-card-visual", {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: "#project-grid",
+                start: "top 80%", // Começa quando o topo da grade atinge 80% da tela
+            }
+        });
+
+        // Efeito Parallax no Instagram
+        const parallaxImages = document.querySelectorAll('.parallax-image');
+        parallaxImages.forEach(image => {
+            const link = image.parentElement;
+            const speed = parseFloat(link.dataset.speed) || 0;
+            gsap.to(image, {
+                y: (i, target) => (ScrollTrigger.maxScroll(window) - target.parentElement.offsetTop) * speed,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#instagram",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
